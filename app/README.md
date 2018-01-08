@@ -1,5 +1,6 @@
 # My Recipe
 This is a web app built with FLASK framework for all your favourite recipes.
+
 Built by Murungi Kirima and Seth Muriuki.
 
 ## Description
@@ -14,7 +15,7 @@ Clone My-Recipe from this github repository.
 Install the prerequisites in a virtual environment.
 Install pip and virtualenv:
 ```
-$ sudo apt-get install python-pip python-dev build-essential
+$ sudo pip install --upgrade virtualenv.
 ```
 Activate the virtual env in your terminal:
 ```
