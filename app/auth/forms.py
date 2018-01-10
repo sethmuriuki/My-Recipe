@@ -22,4 +22,9 @@ class RegistrationForm(FlaskForm):
         if User.query.filter_by(email = data_field.data).first():
             raise ValidationError('An account in that email already exists')
 
-    
+    def validate_username(self,data_field):
+        '''
+        Function checks if the username is unique and raises ValidationError
+        '''
+        if User.query.filter_by(username = data_field.data).first():
+            raise ValidationError('that name is already taken')
