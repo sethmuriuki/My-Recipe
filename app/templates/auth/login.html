@@ -1,10 +1,11 @@
 {% extends 'auth/auth-base.html'%}
+{% load bootstrap3 %}
 {%block styles%}
 {{ super() }}
 <link rel="stylesheet" href="{{url_for('static', filename='js/login.js')}}">
 {%endblock%}
 
-
+{% block content %}
 <div class="login-page">
   <div class="form">
     <form class="register-form">
@@ -22,3 +23,4 @@
     </form>
   </div>
 </div>
+{% endblock %}
