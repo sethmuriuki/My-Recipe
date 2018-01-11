@@ -1,6 +1,6 @@
 from app import create_app, db
 from flask_script import Manager, Server
-from app.models import Category, Recipe,Comments,User
+from app.model import Comments,User
 from  flask_migrate import Migrate, MigrateCommand
 from flask_login import LoginManager
 

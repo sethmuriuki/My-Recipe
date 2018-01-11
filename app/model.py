@@ -51,10 +51,9 @@ class Comments(db.Model):
     comment_section_id = db.Column(db.String(255))
     date_posted = db.Column(db.DateTime,default=datetime.utcnow)
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
-    pitches_id = db.Column(db.Integer,db.ForeignKey("pitches.id"))
 
 
-     def save_comment(self):
+    def save_comment(self):
         '''
         saves the comments
         '''
