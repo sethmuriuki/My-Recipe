@@ -52,4 +52,16 @@ class Comments(db.Model):
     date_posted = db.Column(db.DateTime,default=datetime.utcnow)
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
     pitches_id = db.Column(db.Integer,db.ForeignKey("pitches.id"))
-    
+
+
+     def save_comment(self):
+        '''
+        saves the comments
+        '''
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_comments(self,id):
+        comment = Comments.query.order_by(Comments.date_posted.desc()).filter_by(pitches_id = id).all()
+        return comment
