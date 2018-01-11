@@ -6,6 +6,7 @@ class Config:
     '''
 
     RECIPE_BASE_URL = "http://www.themealdb.com/api/json/v1/1/lookup.php?i=52772"
+    SECRET_KEY = 'SECRET_KEY'
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     # SECRET_KEY = os.environ.get('SECRET_KEY')

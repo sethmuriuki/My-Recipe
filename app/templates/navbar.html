@@ -1,15 +1,15 @@
 {% extends 'base.html'%}
 {%block styles%}
 {{ super() }}
-<link rel="stylesheet" href="{{url_for('static', filename='css/navbar.css')}}">
-{%endblock%} -->
+<link rel="stylesheet" href="{{url_for('static', filename='navbar.css')}}">
+{%endblock%}
 
 <!-- content block -->
-{% block navabar %}
+{% block navbar %}
 <header>
     <section class="wrapper nav-flex">
         <nav>
-           <a href="#"><img src="http://passwordchef.co/images/password-chef-logo.png" class="logo"></a>
+           <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe9k2A_J82ARitrdRr3QsR_vCiqycWnziyxbCgx1uOnpZZ9cr2" class="logo"></a>
         </nav>
         <nav class="navigation">
 		  <ul>
@@ -19,8 +19,16 @@
 		  </ul>
         </nav>
         <nav class="login-area">
-            <button class="login"><a href="#">LOGIN</a></button>
-            <button class="register"><a href="#">REGISTER</a></button>
+          {% if current_user.is_authenticated %}
+          <h3> Hi {{ current_user.username }} </h3>
+            <button class="login">
+              <a href="{{url_for('auth.logout')}}">LOG OUT</a>
+            </button>
+          {% else %}
+            <button class="login">
+              <a href="{{url_for('auth.login')}}">LOG IN </a>
+            </button>
+          {% endif %}
         </nav>
     </section>
 </header>
