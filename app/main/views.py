@@ -1,12 +1,15 @@
-from flask import render_template
-from flask_login import login_required, current_user
+from flask import render_template, request, redirect, url_for
 from . import main
+from ..request import get_sources
 
 # Views
 
 @main.route('/')
 def index():
+
     '''
     View root page function that returns the index page and its data
     '''
-    return render_template('index.html')
+    meal_sources = get_sources('sources')
+
+    return render_template('index.html', meal_sources = meal_sources)

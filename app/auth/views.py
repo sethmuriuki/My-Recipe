@@ -3,7 +3,7 @@ from . import auth
 from flask_login import login_user,logout_user,login_required
 from .. model import User
 from . forms import RegistrationForm,LoginForm
-# from .. import db
+from .. import db
 
 #login route
 @auth.route('/login', methods=['GET', 'POST'])
@@ -24,14 +24,20 @@ def login():
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first()
-        if user is not None and user.verify_password(form.password.data):
-            login_user(user,form.remember.data)
-            return redirect(request.args.get('next')or url_for('auth.login'))
+        user = User(email = form.email.data, username = form.username.data,password = form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        # print(user)
+
+        # user = User.query.filter_by(email=form.email.data).first()
+        # if user is not None and user.verify_password(form.password.data):
+        #     login_user(user,form.remember.data)
+        
+        return redirect(url_for('auth.login'))
 
         flash('invalid password')
 
-    title = "One Minute Pitch Login"
+    title = "Recipe Login"
     return render_template('auth/registration.html',registration_form = form,title = title)
 
 #logout

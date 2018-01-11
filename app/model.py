@@ -64,3 +64,17 @@ class Comments(db.Model):
     def get_comments(self,id):
         comment = Comments.query.order_by(Comments.date_posted.desc()).filter_by(pitches_id = id).all()
         return comment
+
+class Meals:
+    """Meals class to define the meals object"""
+
+    def __init__(self, idMeal, strMeal, strCategory, strArea, strInstructions, strMealThumb, strTags,strMeasure1, strIngridients1):
+        self.idMeal = idMeal
+        self.strMeal = strMeal
+        self.strCategory = strCategory
+        self.strArea = strArea
+        self.strInstructions = strInstructions
+        self.strMealThumb = strMealThumb
+        self.strTags = strTags
+        self.strMeasure1 = strMeasure1
+        self.strIngridients1 = strIngridients1
