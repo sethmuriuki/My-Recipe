@@ -1,0 +1,30 @@
+.footer {
+  padding: 60px 0;
+  background: #111112;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .social {
+    color: black;
+  }
+  li, a {
+    color: #666666;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 24px;
+  }
+  & .title {
+    margin-bottom: .5rem;
+    font-size: 14px;
+    color: #ccc;
+    border-bottom: 1px solid #333;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer .col-sm-3 {
+    padding-bottom: 2rem;
+  }
+}
