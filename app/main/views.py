@@ -10,6 +10,15 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-    meal_sources = get_sources('sources')
+    meal_sources = get_sources('meals')
 
     return render_template('index.html', meal_sources = meal_sources)
+
+@main.route('/categories/<idMeal>')
+def category(idMeal):
+    '''
+    display recipes category
+    '''
+    meal_sources = get_sources('meals')
+
+    return render_template('recipe.html', meal_sources = meal_sources)

@@ -11,12 +11,12 @@
 
 {% block content%}
 <section class="jumbo">
-	<h1>what's cooking today?</h1>
-	<div class="search">
-	<input type="search" placeholder="find a recipe">
-		<button label="FIND" data-toggle="tooltip" title="Hooray!">FIND</button>
-	</div>
-	</section>
+    <h1>what's cooking today?</h1>
+    <div class="search">
+        <input type="search" placeholder="find a recipe">
+        <button label="FIND" data-toggle="tooltip" title="Hooray!">FIND</button>
+    </div>
+</section>
 
 
 {% for source in meal_sources %}
@@ -190,8 +190,5 @@ margin-top:100px
 
 
 <!-- <h1>Sources</h1> -->
-{{macro.displayMealList(meal_sources)}}
-{% endblock %}
+{{macro.displayMealList(meal_sources)}} {% endblock %}
 <!-- <h1> Hello World </h1> -->
-
->>>>>>> cb222b94e92aa8820c0f67e200fadc2348e616ed
