@@ -9,26 +9,28 @@
 <header>
     <section class="wrapper nav-flex">
         <nav>
-           <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe9k2A_J82ARitrdRr3QsR_vCiqycWnziyxbCgx1uOnpZZ9cr2" class="logo"></a>
+           <a href="#">
+             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe9k2A_J82ARitrdRr3QsR_vCiqycWnziyxbCgx1uOnpZZ9cr2" class="logo">
+           </a>
         </nav>
         <nav class="navigation">
 		  <ul>
               <li><a href="#">RECIPES</a></li>
               <li><a href="#">CATEGORIES</a></li>
-              <li><a href="#">VIDEOS</a></li>
+              <li><a href="#">MY PROFILE</a></li>
 		  </ul>
         </nav>
         <nav class="login-area">
-          {% if current_user.is_authenticated %}
-          <h3> Hi {{ current_user.username }} </h3>
+          <!-- {% if current_user.is_authenticated %} -->
+          <h3> Hi yoh{{ current_user.username }} </h3>
             <button class="login">
               <a href="{{url_for('auth.logout')}}">LOG OUT</a>
             </button>
-          {% else %}
+          <!-- {% else %} -->
             <button class="login">
               <a href="{{url_for('auth.login')}}">LOG IN </a>
             </button>
-          {% endif %}
+          <!-- {% endif %} -->
         </nav>
     </section>
 </header>

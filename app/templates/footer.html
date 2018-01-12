@@ -1,0 +1,76 @@
+{% extends 'base.html'%}
+
+{% block footer %}
+<header>
+    <section class="wrapper nav-flex">
+        <nav>
+           <a href="#">
+             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe9k2A_J82ARitrdRr3QsR_vCiqycWnziyxbCgx1uOnpZZ9cr2" class="logo">
+           </a>
+        </nav>
+        <nav class="navigation">
+      <ul>
+              <li><a href="#">RECIPES</a></li>
+              <li><a href="#">CATEGORIES</a></li>
+              <li><a href="#">MY PROFILE</a></li>
+      </ul>
+        </nav>
+        <nav class="login-area">
+          <!-- {% if current_user.is_authenticated %} -->
+          <h3> Hi yoh{{ current_user.username }} </h3>
+            <button class="login">
+              <a href="{{url_for('auth.logout')}}">LOG OUT</a>
+            </button>
+          <!-- {% else %} -->
+            <button class="login">
+              <a href="{{url_for('auth.login')}}">LOG IN </a>
+            </button>
+          <!-- {% endif %} -->
+        </nav>
+    </section>
+</header>
+{% endblock %}
+
+
+<!-- <section class="wrapper nav-flex"> -->
+  <nav class="navigation">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <ul>
+            <li class="title">Overview</li>
+            <li><a href="#">Marketing & SEO</a></li>
+            <li><a href="#">Mobile Commerce</a></li>
+            <li><a href="#">App Store</a></li>
+            <li><a href="#">Feature List</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-3">
+          <ul>
+            <li class="title">Resources</li>
+            <li><a href="#">App Store</a></li>
+            <li><a href="#">SEO Strategy</a></li>
+            <li><a href="#">Forums Help</a></li>
+            <li><a href="#">Community Outreach</a></li>
+            <li><a href="#">Store theme</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-3">
+          <ul>
+            <li
+          </ul>
+        </div>
+        <div class="col-sm-3">
+          <ul>
+            <li class="title">Contact Us</li>
+            <li><a href="#">send us an email</a></li>
+            <li><a href="#">give us a call</a></li>
+          </ul>
+          <ul>
+            <li </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</section>
