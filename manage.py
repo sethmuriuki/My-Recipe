@@ -5,7 +5,7 @@ from  flask_migrate import Migrate, MigrateCommand
 from flask_login import LoginManager
 
 # Creating app instances
-app = create_app('development')
+app = create_app('production')
 
 manager = Manager(app)
 manager.add_command('server',Server)
