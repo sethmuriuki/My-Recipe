@@ -15,14 +15,11 @@
         </nav>
         <nav class="navigation">
 		  <ul>
-              <li><a href="#">RECIPES</a></li>
-              <li><a href="#">CATEGORIES</a></li>
-              <li><a href="#">MY PROFILE</a></li>
+              <li><a href="category.html">CATEGORIES</a></li>
 		  </ul>
         </nav>
         <nav class="login-area">
           <!-- {% if current_user.is_authenticated %} -->
-          <h3> Hi yoh{{ current_user.username }} </h3>
             <button class="login">
               <a href="{{url_for('auth.logout')}}">LOG OUT</a>
             </button>
