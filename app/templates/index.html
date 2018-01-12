@@ -1,35 +1,24 @@
-<<<<<<< HEAD
+
 {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 {%block styles%}
 {{ super() }}
-<link rel="stylesheet" href="{{url_for('static', filename='inde.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
 {%endblock%}
 
 {% block content%}
-=======
-{% extends 'base.html'%} {%block styles%} {{ super() }}
-<link rel="stylesheet" href="{{url_for('static', filename='index.css')}}"> {%endblock%} {% block content%}
->>>>>>> cb222b94e92aa8820c0f67e200fadc2348e616ed
-
-
 <section class="jumbo">
-    <h1>what's cooking today?</h1>
-    <div class="search">
-        <form>
-            <input type="search" placeholder="find a recipe" value="{{meal_name}}">
-            <button label="FIND" data-toggle="tooltip" title="Hooray!" type="submit">FIND</button>
-        </form>
+	<h1>what's cooking today?</h1>
+	<div class="search">
+	<input type="search" placeholder="find a recipe">
+		<button label="FIND" data-toggle="tooltip" title="Hooray!">FIND</button>
+	</div>
+	</section>
 
-    </div>
-</section>
 
-<<<<<<< HEAD
-<h1>Sources</h1>
+<!-- <h1>Sources</h1> -->
 {{macro.displayMealList(meal_sources)}}
-
 {% endblock %}
-=======
 <!-- <h1> Hello World </h1> -->
-{% endblock %}
+
 >>>>>>> cb222b94e92aa8820c0f67e200fadc2348e616ed

@@ -5,10 +5,10 @@ from .model import Meals
 def get_sources(meals):
     """Function to retrieve meals  list from the api"""
 
-    get_url = 'http://www.themealdb.com/api/json/v1/1/random.php'
+    get_url = 'http://www.themealdb.com/api/json/v1/1/latest.php'
     # get_url = 'http://www.themealdb.com/api/json/v1/1/search.php?s={meal_name}'
 
-    # meal_name = request.args.get('meal_name') 
+    # meal_name = request.args.get('meal_name')
 
     with urllib.request.urlopen(get_url) as url:
         get_data = url.read()
@@ -43,3 +43,5 @@ def process_results(meals_list):
 
         source_object = Meals(idMeal, strMeal, strCategory, strArea, strInstructions, strMealThumb, strTags, strMeasure1, strIngridients1)
         sources_results.append(source_object)
+
+    return sources_results
