@@ -27,11 +27,6 @@ def register():
         user = User(email = form.email.data, username = form.username.data,password = form.password.data)
         db.session.add(user)
         db.session.commit()
-        # print(user)
-
-        # user = User.query.filter_by(email=form.email.data).first()
-        # if user is not None and user.verify_password(form.password.data):
-        #     login_user(user,form.remember.data)
         
         return redirect(url_for('auth.login'))
 
