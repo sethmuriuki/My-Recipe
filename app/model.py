@@ -68,7 +68,7 @@ class Comments(db.Model):
 class Meals:
     """Meals class to define the meals object"""
 
-    def __init__(self, idMeal, strMeal, strCategory, strArea, strInstructions, strMealThumb, strTags,strMeasure1, strIngridients1):
+    def __init__(self, idMeal, strMeal, strCategory, strArea, strInstructions, strMealThumb, strTags,strMeasure1, strIngridients1, strYoutube):
         self.idMeal = idMeal
         self.strMeal = strMeal
         self.strCategory = strCategory
@@ -78,3 +78,4 @@ class Meals:
         self.strTags = strTags
         self.strMeasure1 = strMeasure1
         self.strIngridients1 = strIngridients1
+        self.strYoutube = strYoutube

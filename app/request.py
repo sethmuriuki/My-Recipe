@@ -5,8 +5,9 @@ from .model import Meals
 def get_sources(meals):
     """Function to retrieve meals  list from the api"""
 
-    get_url = 'http://www.themealdb.com/api/json/v1/1/latest.php'
-    # get_url = 'http://www.themealdb.com/api/json/v1/1/search.php?s={meal_name}'
+    get_url = 'http://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood'
+
+    #  get_url = 'http://www.themealdb.com/api/json/v1/1/search.php?s={meal_name}'
 
     # meal_name = request.args.get('meal_name')
 
@@ -40,8 +41,9 @@ def process_results(meals_list):
         strTags = source_item.get('strTags')
         strMeasure1 = source_item.get('strMeasure1')
         strIngridients1 = source_item.get('strIngridients1')
+        strYoutube = source_item.get('strYoutube')
 
-        source_object = Meals(idMeal, strMeal, strCategory, strArea, strInstructions, strMealThumb, strTags, strMeasure1, strIngridients1)
+        source_object = Meals(idMeal, strMeal, strCategory, strArea, strInstructions, strMealThumb, strTags, strMeasure1, strIngridients1, strYoutube)
         sources_results.append(source_object)
 
     return sources_results
