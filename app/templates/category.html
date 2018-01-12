@@ -2,15 +2,29 @@
 
 
 {% block content%}
+<section class="jumbo">
+    <h1>what's cooking today?</h1>
+    <div class="search">
+        <input type="search" placeholder="find a recipe">
+        <button label="FIND" data-toggle="tooltip" title="Hooray!">FIND</button>
+    </div>
+</section>
+
 <section class="content">
   <h1 class="section-name">
     Our Categories.
   </h1>
+  {% for source in meal_sources %}
+  <div class="info">
+    <h1>{{ source.strMeal }}</h1>
+  </div>
+  <!-- <p>{{ source.strInstructions }}</p> -->
   <p align="center">
-    <a href="#" class="btn twtr" target="_b">
-      {{ source.strInstructions }}
+    <a href="{{ source.strYoutube }}" class="btn twtr" target="_b">
+      Watch this on YouTube
     </a>
   </p>
+  {% endfor %}
 </section>
 	<style media="screen">
 	@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i');

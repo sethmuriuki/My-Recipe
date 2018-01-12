@@ -14,11 +14,11 @@ def index():
 
     return render_template('index.html', meal_sources = meal_sources)
 
-@main.route('/categories/<idMeal>')
-def category(idMeal):
+@main.route('/categories')
+def category():
     '''
     display recipes category
     '''
     meal_sources = get_sources('meals')
 
-    return render_template('recipe.html', meal_sources = meal_sources)
+    return render_template('category.html', meal_sources = meal_sources)
